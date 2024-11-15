@@ -5,49 +5,30 @@ using namespace std;
 #define endl '\n'
 typedef long long ll;
 
+void solve(){
+    int n,k;
+    cin>>n>>k;
+    vector<int>b(k,0);
+    for(int i=0; i<k; i++){
+        int x,y;
+        cin>>x>>y;
+        b[x-1] +=y;
+    }
+    sort(b.rbegin(),b.rend());
+    ll sum = 0;
+    for(int i=0; i<min(n,k); i++){
+        sum +=b[i];
+    }
+
+    cout<<sum<<endl;
+}
 
 int main(){
     optimize();
 
     int t; cin>>t;
     while(t--){
-        int n,k;
-        cin>>n>>k;
-        vector<int> a,b;
-        set<int> s;
-        set<int, greater<int> > s1;
-        for(int i=0; i<k; i++){
-            int c,d;
-            cin>>c>>d;
-            a.push_back(c);
-            b.push_back(d);
-        }
-        for(int i=0; i<k; i++){
-            s.insert(a[i]);
-        }
-        for(auto u:s){
-            int num = u;
-            int pp = 0;
-            for(int i=0; i<k; i++){
-                if(a[i]==num){
-                    pp +=b[i];
-                }
-            }
-            s1.insert(pp);
-        }
-        int sum = 0;
-        for(auto u:s1){
-            if(n>0){
-                sum +=u;
-                n--;
-            }
-            else{
-                break;
-            }
-        }
-        
-
-        cout<<sum<<endl;
+        solve();
     }
 
     return 0;
