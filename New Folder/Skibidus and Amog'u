@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl '\n'
+typedef long long ll;
+
+void solve(){
+    string s;
+    cin>>s;
+    string str="";
+    int n = s.size();
+    if(s[n-1]=='s' and s[n-2]=='u'){
+        for(int i=0; i<n-2; i++){
+            str +=s[i];
+        }
+    }
+    str +='i';
+
+    cout<<str<<endl;
+}
+
+int main(){
+    optimize();
+    
+    int t; cin>>t;
+    while(t--){
+        solve();
+    }
+    
+
+    return 0;
+}
