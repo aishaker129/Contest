@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl '\n'
+typedef long long ll;
+
+void solve(){
+    string s;
+    cin>>s;
+    string str= "";
+    for(int i=0; i<s.size(); i++){
+        if(s[i]==s[i+1]){
+            cout<<1<<endl;
+            return;
+        }
+    }
+
+    cout<<s.size()<<endl;
+}
+
+int main(){
+    optimize();
+    
+    int t; cin>>t;
+    while(t--){
+        solve();
+    }
+    
+
+    return 0;
+}
